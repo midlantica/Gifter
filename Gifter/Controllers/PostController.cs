@@ -13,7 +13,6 @@ namespace Gifter.Controllers
     public class PostController : ControllerBase
     {
         private readonly IPostRepository _postRepository;
-        private object _userProfileRepository;
 
         public PostController(IPostRepository postRepository)
         {
@@ -23,14 +22,7 @@ namespace Gifter.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var posts = _postRepository.GetAll();
-
-            foreach (var post in posts)
-            {
-                post.UserProfile = _userProfileRepository.GetById(post.UserProfileId);
-            }
-
-            return Ok(posts);
+            return Ok(_postRepository.GetAll());
         }
 
         [HttpGet("{id}")]

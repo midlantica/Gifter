@@ -97,7 +97,7 @@ namespace Gifter.Repositories
             }
         }
 
-        public List<Post> GetAllWithComments(int id)
+        public List<Post> GetAllWithComments()
         {
             using (var conn = Connection)
             {
@@ -232,24 +232,6 @@ namespace Gifter.Repositories
             }
         }
 
-        public void GetWithComments(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        object IPostRepository.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetAllWithComments()
-        {
-            throw new NotImplementedException();
-        }
-
-        object IPostRepository.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
