@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 export const PostContext = React.createContext();
-
 export const PostProvider = (props) => {
   const [posts, setPosts] = useState([]);
 
@@ -9,6 +7,10 @@ export const PostProvider = (props) => {
     return fetch("/api/post")
       .then((res) => res.json())
       .then(setPosts);
+  };
+
+  const getPost = (id) => {
+    return fetch(`/api/post/${id}`).then((res) => res.json());
   };
 
   const addPost = (post) => {
@@ -19,10 +21,6 @@ export const PostProvider = (props) => {
       },
       body: JSON.stringify(post),
     });
-  };
-
-  const getPost = (id) => {
-    return fetch(`/api/post/${id}`).then((res) => res.json());
   };
 
   return (

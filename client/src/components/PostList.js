@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { PostContext } from "../providers/PostProvider";
-//import Post from "./Post";
-import PostForm from "./PostForm";
+import Post from "./Post";
 
 const PostList = () => {
   const { posts, getAllPosts } = useContext(PostContext);
@@ -11,13 +10,11 @@ const PostList = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="cards-column">
-          {posts.map((post) => (
-            <PostForm key={post.id} post={post} />
-          ))}
-        </div>
+    <div className="row justify-content-center">
+      <div className="cards-column">
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
       </div>
     </div>
   );
