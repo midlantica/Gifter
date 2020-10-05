@@ -12,7 +12,7 @@ const PostList = () => {
 
   return (
     <div className="container">
-      <div className="row justify-content-center">
+      <div className="row">
         <div className="cards-column">
           {posts.map((post) => (
             <PostForm key={post.id} post={post} />

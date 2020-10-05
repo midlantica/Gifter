@@ -7,9 +7,7 @@ const Post = ({ post }) => {
       <p className="text-left px-2">Posted by: {post.userProfile.name}</p>
       <CardImg top src={post.imageUrl} alt={post.title} />
       <CardBody>
-        <p>
-          <strong>{post.title}</strong>
-        </p>
+        <p><strong>{post.title}</strong></p>
         <p>{post.caption}</p>
       </CardBody>
     </Card>
