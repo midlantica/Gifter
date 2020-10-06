@@ -18,8 +18,8 @@
       }
     },
     "Gifter": {
-      "commandName": "Project",
-      "launchUrl": "weatherforecast",
+      "commandName": "IISExpress",
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

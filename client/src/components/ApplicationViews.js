@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
+import { UserProfileContext } from "../providers/UserProfileProvider";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
 
 const ApplicationViews = () => {
+  const { isLoggedIn } = useContext(UserProfileContext);
+
   return (
     <Switch>
       <Route path="/" exact>
@@ -22,3 +25,4 @@ const ApplicationViews = () => {
 };
 
 export default ApplicationViews;
+

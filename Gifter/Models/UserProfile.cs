@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Gifter.Models;
 
 namespace Gifter.Models
 {
@@ -21,5 +22,11 @@ namespace Gifter.Models
         [Required]
         public DateTime DateCreated { get; set; }
 
+        [Required]
+        public int UserTypeId { get; set; }
+
+        public UserType UserType { get; set; }
+
+        public string FirebaseUserId { get; set; }
     }
 }
